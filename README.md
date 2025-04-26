@@ -20,6 +20,17 @@ The form dynamically adjusts based on selected gender to enhance user experience
 | `diabetes.csv` | Dataset for training |
 | `diabetes.ipynb` | Notebook for model building and tuning |
 
+Hyperparameter tuning was performed using GridSearchCV over a wide parameter space, optimizing for F1-score. However, after evaluation, the original Gradient Boosting model exhibited superior overall performance with higher accuracy and F1-Score. Therefore, the original model was retained for deployment to ensure more reliable predictions.
+
+### 📚 SHAP Explainability Note
+
+During model evaluation, SHAP (SHapley Additive exPlanations) was used to interpret the Gradient Boosting model’s behavior. The SHAP analysis revealed that features like Glucose, BMI, and Age were the most influential in driving diabetes predictions, while Gender and Skin Thickness had relatively lower impacts.
+
+However, SHAP visualizations were not integrated into the final deployed app to maintain simplicity and accessibility for general users. Instead, health indicator summaries were provided in natural language to ensure transparency without overwhelming non-technical users.
+
+This approach ensures that while the model remains technically explainable, the deployed interface stays user-friendly and aligned with best practices in healthcare AI communication.
+
+
 ## 📦 Installation
 1. Clone the repository:
     ```bash
@@ -43,6 +54,6 @@ The form dynamically adjusts based on selected gender to enhance user experience
 > Always consult healthcare professionals for medical concerns.
 
 ## 👨‍💻 Author
-- [Abdullahi Bishar]
+- Abdullahi Bishar
 
 ---
